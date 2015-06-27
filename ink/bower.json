@@ -1,8 +1,0 @@
-{
-  "name": "ink",
-  "private": true,
-  "dependencies": {
-    "ink": "~1.0.5"
-  }
-}
-

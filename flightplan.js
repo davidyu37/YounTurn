@@ -2,14 +2,14 @@ var plan = require('flightplan');
 
 var appName = 'YounTurn';
 var username = 'deploy';
-var startFile = 'bin/www';
+var startFile = 'app.js';
 
 var tmpDir = appName+'-' + new Date().getTime();
 
 // configuration
 plan.target('staging', [
   {
-    host: '104.131.93.214',
+    host: '45.55.16.76',
     username: 'deploy',
     agent: process.env.SSH_AUTH_SOCK
   }
