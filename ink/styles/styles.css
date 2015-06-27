@@ -1,0 +1,136 @@
+table.facebook td {
+  background: #3b5998;
+  border-color: #2d4473;
+}
+
+table.facebook:hover td {
+  background: #2d4473 !important;
+}
+
+table.twitter td {
+  background: #00acee;
+  border-color: #0087bb;
+}
+
+table.twitter:hover td {
+  background: #0087bb !important;
+}
+
+table.google-plus td {
+  background-color: #DB4A39;
+  border-color: #CC0000;
+}
+
+table.google-plus:hover td {
+  background: #CC0000 !important;
+}
+
+/*打招呼*/
+#greeting {
+  font-family: Impact;
+  border-bottom: 1px solid black;
+  margin-bottom: 5px; 
+}
+/*詢價單的選項*/
+
+.column-title {
+  list-style: none;
+  padding: 10px 0px;
+  border: 1px solid #2d4473;
+  text-align: center;
+  background: #ECF8FF;
+  margin: 0px;
+}
+
+.column-title li {
+  display: inline;
+  margin: 10px;
+  padding: 5px 10px;
+  border-right: 1px solid #2d4473;
+  border-left: 1px solid #2d4473;
+}
+
+#oddRow {
+  background-color: white;
+}
+/*陽騰*/
+.template-label {
+  padding: 20px 20px 10px 20px;
+  background-color: blue;
+  color: #ffffff;
+  font-size: 20px;
+  box-shadow: 5px 5px 5px #888888;
+}
+/*來自顧客的訊息*/
+#messageBox {
+  height: auto;
+  width: 100%;
+}
+#messageBox tr td {
+  background-color:white;
+  padding: 2px;
+}
+#messageBox tr td p {
+  font-size: 16px;
+  margin: 5px;
+}
+/*顧客資料*/
+#clientInfo {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  width: 95%;
+  height:auto;
+}
+#clientInfo tr td {
+  background-color: white;
+}
+#clientInfo tr td p {
+  font-size: 16px;
+  margin: 5px;
+}
+
+.callout .wrapper {
+  padding-bottom: 20px;
+}
+
+.callout .panel {
+  background: #ECF8FF;
+  border-color: #b9e5ff;
+}
+
+.header {
+  background: #999999;
+}
+
+.footer .wrapper {
+  background: #d53636;
+}
+
+.footer h5 {
+  color: white;
+  padding-bottom: 10px;
+}
+
+table.columns .text-pad {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+table.columns .left-text-pad {
+  padding-left: 10px;
+}
+
+table.columns .right-text-pad {
+  padding-right: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+
+  table[class="body"] .right-text-pad {
+    padding-left: 10px !important;
+  }
+
+  table[class="body"] .left-text-pad {
+    padding-right: 10px !important;
+  }
+}
