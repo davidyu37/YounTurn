@@ -10,7 +10,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 //-------Routes Director--------------
 var routes = require('./routes/index');
-var users = require('./routes/users');
+// var users = require('./routes/users');
 //-----------SendGrid------------------
 var sendgrid  = require('sendgrid')('davidyu37', 'dire821silo949');
 
@@ -38,7 +38,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 //connect the routes to express
 app.use('/', routes);
-app.use('/users', users);
+// app.use('/users', users);
 
 //process the user's post
 app.post('/inquiry', function (req, res) {
@@ -69,7 +69,5 @@ app.post('/inquiry', function (req, res) {
 
 });
 module.exports = app;
-
-app.listen(3000);
 //The end------------------------
 

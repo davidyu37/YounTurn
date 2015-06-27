@@ -2,7 +2,7 @@ var plan = require('flightplan');
 
 var appName = 'YounTurn';
 var username = 'deploy';
-var startFile = 'app.js';
+var startFile = 'bin/www';
 
 var tmpDir = appName+'-' + new Date().getTime();
 
@@ -15,19 +15,19 @@ plan.target('staging', [
   }
 ]);
 
-plan.target('production', [
-  {
-    host: '45.55.16.76',
-    username: 'deploy',
-    agent: process.env.SSH_AUTH_SOCK
-  },
-//add in another server if you have more than one
-// {
-//   host: '104.131.93.216',
-//   username: username,
-//   agent: process.env.SSH_AUTH_SOCK
-// }
-]);
+// plan.target('production', [
+//   {
+//     host: '45.55.16.76',
+//     username: 'deploy',
+//     agent: process.env.SSH_AUTH_SOCK
+//   },
+// //add in another server if you have more than one
+// // {
+// //   host: '104.131.93.216',
+// //   username: username,
+// //   agent: process.env.SSH_AUTH_SOCK
+// // }
+// ]);
 
 // run commands on localhost
 plan.local(function(local) {
