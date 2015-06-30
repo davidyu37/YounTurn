@@ -3,7 +3,6 @@
 var fs = require('fs');
 var express = require('express');
 var path = require('path');
-var jade = require('jade');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
@@ -46,8 +45,8 @@ app.use('/', routes);
 app.post('/inquiry', function (req, res) {
   var data = {
     from: req.body.email,
-    to: 'yount.insert@msa.hinet.net',
-    //to: 'davidyu37@gmail.com',
+    //to: 'yount.insert@msa.hinet.net',
+    to: 'davidyu37@gmail.com',
     subject: 'Inquiry',
     html: compiledTemplate.render({
         name: req.body.name, companyName: req.body.companyName, email: req.body.email, message: req.body.message,
@@ -61,10 +60,7 @@ app.post('/inquiry', function (req, res) {
  
   mailgun.messages().send(data, function (error, body) {
     if (error) { return res.send('No!'+error); }
-    res.render('inquiry', function(err, html) {
-      console.log(body);
-      res.send(html);
-    });
+    res.send(body);
   });
 });
 module.exports = app;
