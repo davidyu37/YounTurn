@@ -12,7 +12,6 @@
     "express": "~4.12.4",
     "hogan-express": "^0.5.2",
     "hogan.js": "^3.0.2",
-    "jade": "^1.11.0",
     "mailgun-js": "^0.7.0",
     "morgan": "~1.5.3",
     "serve-favicon": "~2.2.1"

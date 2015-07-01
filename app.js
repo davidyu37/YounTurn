@@ -9,7 +9,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 //-------Routes Director--------------
 var routes = require('./routes/index');
-// var users = require('./routes/users');
+
 //-----------Mailgun------------------
 var api_key = 'key-08464445d1a52f8c6d863f0861b1bcb9';
 var domain = 'contact.keepballin.com';
@@ -39,28 +39,30 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 //connect the routes to express
 app.use('/', routes);
-// app.use('/users', users);
 
 //process the user's post
 app.post('/inquiry', function (req, res) {
   var data = {
     from: req.body.email,
-    //to: 'yount.insert@msa.hinet.net',
-    to: 'davidyu37@gmail.com',
+    // to: 'davidyu37@gmail.com',
+    to: ['yount.insert@msa.hinet.net','davidyu37@gmail.com','younturn@ms34.hinet.net','younturn.info@gmail.com','a21217130@gmail.com'],
     subject: 'Inquiry',
     html: compiledTemplate.render({
-        name: req.body.name, companyName: req.body.companyName, email: req.body.email, message: req.body.message,
+        receiver: '陽騰', name: req.body.name, companyName: req.body.companyName, email: req.body.email, message: req.body.message,
         item1: req.body.ITEM_1, quan1: req.body.ANN_1, quanlot1: req.body.QTY_1, price1: req.body.US_1, 
         item2: req.body.ITEM_2, quan2: req.body.ANN_2, quanlot2: req.body.QTY_2, price2: req.body.US_2,
         item3: req.body.ITEM_3, quan3: req.body.ANN_3, quanlot3: req.body.QTY_3, price3: req.body.US_3,
         item4: req.body.ITEM_4, quan4: req.body.ANN_4, quanlot4: req.body.QTY_4, price4: req.body.US_4,
         item5: req.body.ITEM_5, quan5: req.body.ANN_5, quanlot5: req.body.QTY_5, price5: req.body.US_5
-    })
+    })   
   };
- 
+  console.log(req.body.message);
   mailgun.messages().send(data, function (error, body) {
-    if (error) { return res.send('No!'+error); }
-    res.send(body);
+    if (error) { return res.send('不好意思，請輸入可用的email。'); }
+    res.render('inquiry', function(err, html) {
+      console.log(body);
+      res.send(html);
+    });
   });
 });
 module.exports = app;

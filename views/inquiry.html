@@ -2,6 +2,12 @@
 <html>
 <head>
 <title>{{title}}</title>
+<style>
+#messagebox {
+	height: 200px;
+	width: 500px;
+}
+</style>
 </head>
 <body>
 <h3 class="style">詢價單</h3>
@@ -23,7 +29,7 @@
 			<label for="message">留言內容:</label>
 		</p>
 		<p>
-			<textarea name="message"></textarea>
+			<textarea id="messagebox" name="message"></textarea>
 		</p>
 		<table width="98%" border="1" cellspacing="0">
 		<colgroup width="26"></colgroup><colgroup span="3" width="104"></colgroup><colgroup width="131"></colgroup>
@@ -135,5 +141,13 @@
 		</p>
 	</fieldset>
 </form>
+<script>
+//Replace new line with break
+var messagebox = document.getElementById("messagebox");
+messagebox.addEventListener("keyup", function(){
+	var x = messagebox.value.replace(/\n/g, '<br/>');
+	messagebox.innerHTML = x;
+});
+</script>	
 </body>
 </html>
